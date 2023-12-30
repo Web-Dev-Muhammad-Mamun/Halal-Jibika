@@ -1,0 +1,34 @@
+.containers {
+    width: 1200px;
+}
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+}
+.about-section-image img {
+    width: 550px;
+    position: relative;
+    top: 0px;
+    left: -0%;
+}
+.about-section-text {
+    margin: 40px 0;
+    position: relative;
+}
+.about-section-text h1  {
+    font-family: 'Oswald', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: white;
+}
+.about-section-text h1 span {
+    color: #f0555b;
+}
+.about-section-text h4 {
+    color: white;
+    font-weight: 400;
+    margin: 40px 0;
+}

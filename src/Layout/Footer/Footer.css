@@ -1,0 +1,11 @@
+.footer-section {
+background: wheat;
+}
+.footer-section ul {
+    display: flex;
+    justify-content: space-between;
+}
+.left-footer {
+    display: flex;
+    gap: 1rem;
+}

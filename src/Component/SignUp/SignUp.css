@@ -1,0 +1,47 @@
+.sign-up-container {
+    text-align: center;
+}
+.sign-up-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 30rem;
+    margin: 0 auto;
+    padding: 6px;
+    border: 2px solid white;
+}
+.heading {
+    font-size: 15px;
+}
+.form-inner {
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+}
+.all-input {
+width: 20rem;
+height: 1rem;
+border-radius: 5px;
+margin-bottom: 10px;
+padding: 5;
+}
+.register-btn {
+width: 10rem;
+border-radius: 5px;
+background: #f0555b;
+border: 2px solid #f0555b;
+color: white;
+text-transform: uppercase;
+height: 1.5rem;
+transition: 0.5s;
+}
+.register-btn:hover {
+background: #0b0d0c;
+color: #f0555b;
+border: 2px solid #f0555b;
+}
+.have-account {
+    
+}
