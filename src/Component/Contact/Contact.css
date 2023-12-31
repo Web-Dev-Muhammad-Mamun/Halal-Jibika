@@ -4,12 +4,17 @@
     text-align: center;
     margin: 20px auto;
     padding: 20px;
+    border-radius: 20px;
     background: black;
     border: 2px solid white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
   }
   .contact-container h2 {
-    color: white;
+    color: #f0555b;
+    border: 2px solid #fff;
+    width: 15rem;
+    margin: 20px auto;
+    padding: 5px;
   }
   .contact-info {
     color: white;
@@ -18,14 +23,15 @@
   }
   .single-address {
     display: flex;
-    gap: 30px;
-    text-align: start;
+    gap:  30px;
     align-items: center;
   }
- .single-address p {
-    border: 2px solid white;
-    
- }
+  .single-address strong  {
+    display: flex;
+    gap: 5px;
+    color: #f0555b;
+  }
+
   .contact-info p {
     margin: 10px 0;
   }

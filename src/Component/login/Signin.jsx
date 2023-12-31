@@ -1,30 +1,40 @@
-import { useState } from "react";
 import "./Signin.css";
 import NavigateBtn from "../../NavigateBtn/NavigateBtn";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../../firebase.init";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Login clicked with:", { email, password });
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((UserCredential) => {
+        console.log(UserCredential.user.displayName);
+        navigate("/");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: error,
+          text: "Something went wrong",
+        });
+      });
+    // console.log("Login clicked with:", { email, password });
   };
 
   return (
     <div className='login-container'>
+      {<h1>{}</h1>}
+      {<h1></h1>}
       <h2 className='login-title'>Sign In</h2>
       <form className='login-form' onSubmit={handleLogin}>
         <div className='form-group'>
-          <input
-            type='email'
-            name='email'
-            placeholder='Enter your email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <input type='email' name='email' placeholder='Enter your email' />
         </div>
         <div className='form-group'>
           <input
@@ -32,8 +42,6 @@ const Login = () => {
             id='password'
             name='password'
             placeholder='Enter your password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className='form-group'>
@@ -50,9 +58,9 @@ const Login = () => {
           <NavigateBtn />
         </div>{" "}
         <div className='or-sign-in'>
-            <h1>or</h1>
-            <h2 className=''>login with</h2>
-          </div>
+          <h1>or</h1>
+          <h2 className=''>login with</h2>
+        </div>
         <SocialLogin />
       </div>
     </div>

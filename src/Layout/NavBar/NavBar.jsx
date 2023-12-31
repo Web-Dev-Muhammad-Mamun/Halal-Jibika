@@ -3,8 +3,14 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import "./NavBar.css";
 import { useState } from "react";
+import { getAuth, signOut } from "firebase/auth";
+import { auth } from "../../firebase.init";
 //
 const NavBar = () => {
+  const logOut = () => {
+    const auth = getAuth();
+    signOut(auth);
+  };
   const [openBurger, setOpenBurger] = useState(true);
   const navLinkStyle = ({ isActive }) => {
     return {
@@ -72,9 +78,15 @@ const NavBar = () => {
               </li>
 
               <li>
-                <NavLink style={navLinkStyle} to='./signin'>
-                  Sign IN
-                </NavLink>
+                {auth ? (
+                  <NavLink style={navLinkStyle} onClick={logOut}>
+                    Sign Out
+                  </NavLink>
+                ) : (
+                  <NavLink style={navLinkStyle} to='./signin'>
+                    Sign IN
+                  </NavLink>
+                )}
               </li>
 
               <li>
@@ -82,6 +94,7 @@ const NavBar = () => {
                   Sign Up
                 </NavLink>
               </li>
+              <li>{/* <h1>{auth.currentUser}</h1> */}</li>
             </div>
           </ul>
         </div>
@@ -95,25 +108,41 @@ export default NavBar;
 // import { FaFacebookF } from "react-icons/fa";
 // import { FaInstagram } from "react-icons/fa";
 // import { CiTwitter } from "react-icons/ci";
-// <div className='social-section'>
-// <li className='social'>
-//   <a href='https://www.facebook.com/'>
-//     <FaFacebookF size={20} />
-//     <i></i>
-//   </a>
-// </li>
-
-// <li className='social'>
-//   <a href='https://www.instagram.com/'>
-//     <FaInstagram size={20} />
-//     <i></i>
-//   </a>
-// </li>
-
-// <li className='social'>
-//   <a href='https://twitter.com/'>
-//     <CiTwitter size={22} />
-//     <i></i>
-//   </a>
-// </li>
-// </div>
+// import { auth } from './../../firebase.init';
+{
+  /* <div className='social-section'>
+  //{" "}
+  <li className='social'>
+    //{" "}
+    <a href='https://www.facebook.com/'>
+      // <FaFacebookF size={20} />
+      // <i></i>
+      //{" "}
+    </a>
+    //{" "}
+  </li>
+  //{" "}
+  <li className='social'>
+    //{" "}
+    <a href='https://www.instagram.com/'>
+      // <FaInstagram size={20} />
+      // <i></i>
+      //{" "}
+    </a>
+    //{" "}
+  </li>
+  //{" "}
+  <li className='social'>
+    //{" "}
+    <a href='https://twitter.com/'>
+      // <CiTwitter size={22} />
+      // <i></i>
+      //{" "}
+    </a>
+    //{" "}
+  </li>
+  //{" "} */
+}
+{
+  /* </div>; */
+}

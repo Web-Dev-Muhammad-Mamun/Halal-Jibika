@@ -1,13 +1,21 @@
-import { Link } from "react-router-dom";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./SignUp.css";
 import NavigateBtn from "../../NavigateBtn/NavigateBtn";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  updateProfile,
+} from "firebase/auth";
 import Swal from "sweetalert2";
 import { auth } from "../../firebase.init";
+import { useEffect, useState } from "react";
 
 //start ///////////////////////////
 const SignUp = () => {
+  const [users, setUsers] = useState();
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -15,7 +23,6 @@ const SignUp = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
-
     if (
       name === "" ||
       email === "" ||
@@ -48,18 +55,27 @@ const SignUp = () => {
       });
       return;
     }
-
     createUserWithEmailAndPassword(auth, email, password).then(
       (userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        }).then(() => {
+          navigate("/");
+          console.log(user.displayName);
+        });
       }
     );
   };
+  useEffect(() => {
+    onAuthStateChanged(auth, (users) => {
+      setUsers(users);
+    });
+  }, [users]);
   return (
     <div className='sign-up-container'>
-      <div className='uppercase text-orange-300 shadow-xl p-1 m-2'>
-        {/* <h1>Name : {currUser?.displayName}</h1> */}
+      <div>
+        <h1>Name : {users?.displayName}</h1>
       </div>
       <div className='sign-up'>
         <div className=' sign-up-inner'>
