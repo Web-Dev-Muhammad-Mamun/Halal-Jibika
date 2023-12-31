@@ -87,5 +87,11 @@ font-family: 'Oswald', sans-serif;
         margin: 40px 10px;
     }
   }
+  @media only screen and (max-width: 768px) {
+    .hero-image img {
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+  }
 
 

@@ -1,22 +1,23 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import "./NavBar.css";
 import { useState } from "react";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.init";
 //
 const NavBar = () => {
+  const navigate = useNavigate();
   const logOut = () => {
-    const auth = getAuth();
-    signOut(auth);
+    signOut(auth).then((res) => {
+      navigate("/");
+      console.log(res);
+    });
   };
-  const [openBurger, setOpenBurger] = useState(true);
+  const [openBurger, setOpenBurger] = useState(false);
   const navLinkStyle = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
-      textDecoration: isActive ? "underline" : "none",
-      color: isActive ? "#f0555b" : "white",
     };
   };
   return (
@@ -78,7 +79,7 @@ const NavBar = () => {
               </li>
 
               <li>
-                {auth ? (
+                {auth.currentUser ? (
                   <NavLink style={navLinkStyle} onClick={logOut}>
                     Sign Out
                   </NavLink>
@@ -89,12 +90,29 @@ const NavBar = () => {
                 )}
               </li>
 
-              <li>
-                <NavLink style={navLinkStyle} to='./signup'>
-                  Sign Up
-                </NavLink>
-              </li>
-              <li>{/* <h1>{auth.currentUser}</h1> */}</li>
+              <div className='user-info'>
+                <li>
+                  {auth.currentUser ? (
+                    <NavLink>
+                      {" "}
+                      <span>User Name: </span>
+                      {auth.currentUser?.displayName}
+                    </NavLink>
+                  ) : (
+                    <NavLink>
+                      <span>User Name :</span><strong>No User</strong>
+                    </NavLink>
+                  )}
+                </li>
+                {auth.currentUser?.photoURL ? (
+                  <img src={auth.currentUser?.photoURL} alt='profilePic' />
+                ) : (
+                  <img
+                    src='/src/assets/512x512bb-removebg-preview.png'
+                    alt=''
+                  />
+                )}
+              </div>
             </div>
           </ul>
         </div>

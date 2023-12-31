@@ -40,14 +40,38 @@
   @media only screen and (max-width: 768px) {
     .contact-info {
       text-align: left;
-      max-width: none; /* Remove max-width for responsiveness on smaller screens */
+      max-width: none; 
+    }
+    .single-address {
+      gap: 0px;
+    }
+    .contact-info {
+      margin: 0 1rem;
+    }
+    .contact-container h2 {
+      width: 10rem;
+    }
+    .contact-container img {
+      width: 200px;
     }
   }
-  
+
   /* Responsive styles for mobile */
   @media only screen and (max-width: 480px) {
-    .contact-info p {
-      font-size: 14px;
+    .contact-container {
+      width: 15rem;
+    }
+    .single-address {
+      gap: 0px;
+    }
+    .contact-info {
+      margin: 0 1rem;
+    }
+    .contact-container h2 {
+      width: 10rem;
+    }
+    .contact-container img {
+      width: 200px;
     }
   }
   
