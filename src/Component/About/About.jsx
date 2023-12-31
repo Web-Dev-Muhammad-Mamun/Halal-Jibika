@@ -1,34 +1,25 @@
-import { IoIosArrowForward } from "react-icons/io";
+// AboutPage.js
 import "./About.css";
-import profile from "../images/my photo 2.png";
-const About = () => {
+
+const AboutPage = () => {
   return (
-    <div className='containers'>
-      <div className='about-section'>
-        <div className='about-section-image'>
-          <img src={profile} alt='' />
-        </div>
-        <div className='about-section-text'>
-          <h1>
-            failure is the condiment that <br></br> gives <span>success</span>
-          </h1>
-          <h4>
-            Spend more time focusing on the important aspects of your business.
-            <br></br> Turn to McCartney HR LLC in Brooklyn, NY for HR solutions.
-            As an<br></br> advanced virtual HR company, we are offering online
-            HR systems that<br></br> can be customized depending on your
-            business needs.
-          </h4>
-          <button>
-            DOWNLOAD CV{" "}
-            <i>
-              <IoIosArrowForward />
-            </i>
-          </button>
-        </div>
+    <div className='about-container'>
+      <img src='https://shomoyeralo.com/2023/07/17/salo_1689533992.jpg' alt='Halal Jibika' className='about-image' />
+      <div className='about-content'>
+        <h2>About Halal Jibika</h2>
+        <p>
+          <span>Welcome </span>to Halal Jibika, your trusted source for halal financial
+          solutions. We are committed to providing ethical and Sharia-compliant
+          financial services to meet your unique needs.
+        </p>
+        <p>
+          Our mission is to empower individuals and businesses with financial
+          tools that align with Islamic principles. Explore our range of
+          services and discover the halal way to manage your finances.
+        </p>
       </div>
     </div>
   );
 };
 
-export default About;
+export default AboutPage;

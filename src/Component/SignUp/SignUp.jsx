@@ -18,13 +18,13 @@ const SignUp = () => {
       <div className='uppercase text-orange-300 shadow-xl p-1 m-2'>
         {/* <h1>Name : {currUser?.displayName}</h1> */}
       </div>
-      <div className=''>
+      <div className='sign-up'>
         <div className=' sign-up-inner'>
           <div className='heading'>
             <h1>CREATE AN ACCOUNT</h1>
           </div>
           <div className='inputs'>
-            <form onSubmit={handleSubmit} className=''>
+            <form onSubmit={handleSubmit} className='sign-up-form'>
               <div className='form-inner'>
                 <label>
                   <input
@@ -62,29 +62,25 @@ const SignUp = () => {
                   />
                 </label>
               </div>
-              <button className='register-btn'>
-                register
-              </button>
+              <button className='register-btn'>register</button>
             </form>
           </div>
-          <small className="have-account"> 
-            already have an account? <Link to='/login'>log in</Link>
-          </small>
-          <div className='mt-5 flex gap-3'>
-            <button
-              className='w-24 bg-slate-300 rounded-xl hover:bg-slate-400 ease-in-out duration-300'
-              onClick={handleback}>
+          <div className='have-account'>
+            <small>
+              already have an account? <Link to='/signin '>sign in</Link>
+            </small>
+          </div>
+          <div className='all-handle-btn'>
+            <button className='handle-btn' onClick={handleback}>
               Go back
             </button>
-            <button
-              className='w-24 bg-slate-300 rounded-xl hover:bg-slate-400 ease-in-out duration-300'
-              onClick={handlehome}>
+            <button className=' handle-btn back-home-btn' onClick={handlehome}>
               Go Home
             </button>
           </div>
-          <div className=' text-black-300 text-center'>
+          <div className='or-login'>
             <h1>or</h1>
-            <h2 className=' uppercase text-2xl'>login with</h2>
+            <h2 className=''>login with</h2>
           </div>
           <SocialLogin />
         </div>

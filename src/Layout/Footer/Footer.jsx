@@ -1,21 +1,45 @@
 import "./Footer.css";
-import { Link } from 'react-router-dom';
+import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='footer-section'>
-      <ul>
-        <div className='left-footer'>
-          <Link to= "./about"><li>About Us</li></Link>
-          <Link to = "./privacy"><li>Privacy Policy</li></Link>
-          <li>Terms Of Use</li>
+    <footer className='footer'>
+      <div className='column'>
+        <h3>Company</h3>
+        <p>About Us</p>
+        <p>Contact Us</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div className='column'>
+        <h3>Job Seekers</h3>
+        <p>Search Jobs</p>
+        <p>Create Resume</p>
+        <p>Job Alerts</p>
+      </div>
+      <div className='column'>
+        <h3>Employers</h3>
+        <p>Post a Job</p>
+        <p>Browse Resumes</p>
+        <p>Employer Dashboard</p>
+      </div>
+      <div className='column'>
+        <h3>Connect with Us</h3>
+        <div className='socialLinks'>
+          <a href='#' className='socialIcon' title='LinkedIn'>
+            <FaLinkedin />
+          </a>
+          <a href='#' className='socialIcon' title='Twitter'>
+            <FaTwitter />
+          </a>
+          <a href='#' className='socialIcon' title='GitHub'>
+            <FaGithub />
+          </a>
+          <a href='#' className='socialIcon' title='Email'>
+            <FaEnvelope />
+          </a>
         </div>
-        <div className='right-side'></div>
-        <li>
-          © 2019 Key. All Right Reserved | Design By <span>Mohammad Mamun</span>{" "}
-        </li>
-      </ul>
-    </div>
+      </div>
+    </footer>
   );
 };
 

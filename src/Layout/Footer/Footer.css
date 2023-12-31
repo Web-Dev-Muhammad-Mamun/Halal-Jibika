@@ -1,11 +1,68 @@
-.footer-section {
-background: wheat;
-}
-.footer-section ul {
+/* Footer.css */
+
+.footer {
     display: flex;
-    justify-content: space-between;
-}
-.left-footer {
+    flex-wrap: wrap; /* Allow columns to wrap to the next line */
+    justify-content: space-around;
+    background: linear-gradient(to right, #1a1a1a, #333);
+    color: #fff;
+    padding: 40px 20px;
+  }
+  
+  .column {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 20px; /* Add some space between columns on smaller screens */
+  }
+  
+  .column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .column p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .socialLinks {
     display: flex;
-    gap: 1rem;
-}
+    flex-wrap: wrap; /* Allow social icons to wrap to the next line */
+  }
+  
+  .socialIcon,
+  .column a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  }
+  
+  .socialIcon:hover,
+  .column a:hover {
+    color: #61dafb;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  /* For tablets and larger screens */
+  @media only screen and (min-width: 768px) {
+    .column {
+      flex-basis: calc(33.33% - 20px); /* Adjust based on your preferred column width */
+    }
+  }
+  
+  /* For smaller screens (e.g., mobile phones) */
+  @media only screen and (max-width: 767px) {
+    .column {
+      flex-basis: 100%; /* Full width for small screens */
+    }
+  
+    .socialIcon,
+    .column a {
+      margin-bottom: 10px; /* Add space between social icons and columns on small screens */
+    }
+  }
+  
