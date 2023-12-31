@@ -14,7 +14,7 @@ const NavBar = () => {
     };
   };
   return (
-    <div className='container'>
+    <div className='nav-bar-container'>
       <div className='navigation-bar-section'>
         <div className='logo-section'>
           <Link to='/'>

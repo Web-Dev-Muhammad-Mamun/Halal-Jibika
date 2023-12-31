@@ -1,17 +1,60 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./SignUp.css";
+import NavigateBtn from "../../NavigateBtn/NavigateBtn";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import Swal from "sweetalert2";
+import { auth } from "../../firebase.init";
+
 //start ///////////////////////////
 const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-  const navigate = useNavigate();
-  const handleback = () => {
-    navigate(-1);
-  };
-  const handlehome = () => {
-    navigate("/");
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirmPassword.value;
+
+    if (
+      name === "" ||
+      email === "" ||
+      password === "" ||
+      confirmPassword === ""
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "please fill the form",
+      });
+      return;
+    }
+
+    if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/.test(password)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be at least 8 characters, one uppercase letter, one lowercase letter, and one number",
+      });
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>',
+      });
+      return;
+    }
+
+    createUserWithEmailAndPassword(auth, email, password).then(
+      (userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      }
+    );
   };
   return (
     <div className='sign-up-container'>
@@ -67,17 +110,10 @@ const SignUp = () => {
           </div>
           <div className='have-account'>
             <small>
-              already have an account? <Link to='/signin '>sign in</Link>
+              already have an account ? <Link to='/signin '>sign in</Link>
             </small>
           </div>
-          <div className='all-handle-btn'>
-            <button className='handle-btn' onClick={handleback}>
-              Go back
-            </button>
-            <button className=' handle-btn back-home-btn' onClick={handlehome}>
-              Go Home
-            </button>
-          </div>
+          <NavigateBtn />
           <div className='or-login'>
             <h1>or</h1>
             <h2 className=''>login with</h2>

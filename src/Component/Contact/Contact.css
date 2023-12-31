@@ -1,0 +1,47 @@
+/* Your existing styles */
+.contact-container {
+    width: 25rem;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background: black;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+  }
+  .contact-container h2 {
+    color: white;
+  }
+  .contact-info {
+    color: white;
+    margin: 0 3rem; 
+    width: 350px;
+  }
+  .single-address {
+    display: flex;
+    gap: 30px;
+    text-align: start;
+    align-items: center;
+  }
+ .single-address p {
+    border: 2px solid white;
+    
+ }
+  .contact-info p {
+    margin: 10px 0;
+  }
+  
+  /* Responsive styles for tablets */
+  @media only screen and (max-width: 768px) {
+    .contact-info {
+      text-align: left;
+      max-width: none; /* Remove max-width for responsiveness on smaller screens */
+    }
+  }
+  
+  /* Responsive styles for mobile */
+  @media only screen and (max-width: 480px) {
+    .contact-info p {
+      font-size: 14px;
+    }
+  }
+  
