@@ -10,9 +10,10 @@ const Contact = () => {
         <div className='single-address'>
           <strong>
             {" "}
-            <FaLocationDot /> Address:</strong>
+            <FaLocationDot /> Address:
+</strong>
           
-          <p>Main Street, Cityville, Country</p>
+          <p>123 Main Street, Cityville, Country</p>
         </div>
         <div className='single-address'>
           <strong>
