@@ -1,10 +1,36 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { FaHeart, FaEdit, FaTrash } from "react-icons/fa";
 import { GiPositionMarker } from "react-icons/gi";
-import "./job.css";
-import { Link } from "react-router-dom";
-const Job = ({ job }) => {
-  const { id, image, title, company, position, description } = job;
+
+const JobDetails = () => {
+  const param = useParams().id;
+  const [allJobs, setAllJobs] = useState([]);
+  const [singleJob, setSingleJob] = useState({});
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("../../../public/db.json");
+        setAllJobs(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    allJobs.filter((job) => {
+      if (job.id == +param) {
+        setSingleJob(job);
+      }
+    });
+  }, [allJobs, param]);
+
+  const { id, image, title, company, position, description } = singleJob;
+
   return (
     <div>
       <div className='card'>
@@ -40,4 +66,4 @@ const Job = ({ job }) => {
   );
 };
 
-export default Job;
+export default JobDetails;

@@ -2,7 +2,7 @@ import "./Signin.css";
 import NavigateBtn from "../../NavigateBtn/NavigateBtn";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase.init";
 import Swal from "sweetalert2";
 
@@ -24,7 +24,6 @@ const Login = () => {
           text: "Something went wrong",
         });
       });
-    // console.log("Login clicked with:", { email, password });
   };
 
   return (

@@ -80,11 +80,17 @@ const NavBar = () => {
 
               <li>
                 {auth.currentUser ? (
-                  <NavLink style={navLinkStyle} onClick={logOut}>
+                  <NavLink
+                    className='sign-btn'
+                    style={navLinkStyle}
+                    onClick={logOut}>
                     Sign Out
                   </NavLink>
                 ) : (
-                  <NavLink style={navLinkStyle} to='./signin'>
+                  <NavLink
+                    className='sign-btn'
+                    style={navLinkStyle}
+                    to='./signin'>
                     Sign IN
                   </NavLink>
                 )}
@@ -100,7 +106,8 @@ const NavBar = () => {
                     </NavLink>
                   ) : (
                     <NavLink>
-                      <span>User Name :</span><strong>No User</strong>
+                      <span>User Name :</span>
+                      <strong>No User</strong>
                     </NavLink>
                   )}
                 </li>

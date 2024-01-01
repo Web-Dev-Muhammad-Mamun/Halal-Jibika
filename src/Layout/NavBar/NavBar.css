@@ -23,7 +23,7 @@ body {
   top: 0;
   justify-content: center;
   z-index: 100;
-  width: 100%; /* Make it full width for smaller screens */
+  width: 100%;
 }
 
 .navigation-bar-section {
@@ -45,11 +45,13 @@ body {
 .user-info img {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  padding: 0 20px;
 }
 
 .navigation-name {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -64,32 +66,36 @@ body {
   cursor: pointer;
   font-size: 16px;
 }
-
 .navBar ul li a:focus {
   color: #f0555b;
 }
-
 .navBar ul li a:hover {
   color: #f0555b;
   font-size: 15px;
 }
-
 a {
   text-decoration: none;
 }
-
 li {
   list-style: none;
 }
-
 .toggle-btn {
   display: none;
 }
-
+.navBar ul li .sign-btn {
+border: 2px solid #f0555b;
+  padding: 8px;
+  border-radius: 5px;
+}
+.navBar ul li .sign-btn:hover {
+  color: #fff;
+  border: 2px solid #fff;
+  background: #f0555b;
+}
 /* responsive */
 @media only screen and (max-width: 500px) {
   .navigation-bar-section {
-    padding-inline: 1.2rem; 
+    padding-inline: 1.2rem;
     justify-content: space-around;
     position: relative;
   }
@@ -114,7 +120,6 @@ li {
   }
 
   .show {
-
     left: 8rem;
     justify-content: center;
     align-items: center;

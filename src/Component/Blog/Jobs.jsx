@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import Job from "./Job";
-import './jobs.css'
+import "./jobs.css";
+import axios from "axios";
 
 const Jobs = () => {
   const [allJobs, setAllJobs] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("../../../public/db.json");
-        const data = await response.json();
-        setAllJobs(data);
+        const response = await axios.get("../../../public/db.json");
+        setAllJobs(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -17,7 +17,7 @@ const Jobs = () => {
     fetchData();
   }, []);
   return (
-    <div className="jobsContainer"> 
+    <div className='jobsContainer'>
       {allJobs.map((job) => (
         <Job key={job.id} job={job}></Job>
       ))}

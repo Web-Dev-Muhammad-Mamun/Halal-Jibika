@@ -8,6 +8,9 @@ import Jobs from "../Component/Blog/Jobs";
 import Favorite from "../Component/Favorite/Favorite";
 import Signin from "../Component/login/Signin";
 import SignUp from "../Component/SignUp/SignUp";
+import JobDetails from "../Component/JobDetails/JobDetails";
+// import axios from "axios";
+// import { axios } from 'axios';
 const Routes = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +23,10 @@ const Routes = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: "/jobs/:id",
+        element: <JobDetails />,
       },
       {
         path: "/about",
