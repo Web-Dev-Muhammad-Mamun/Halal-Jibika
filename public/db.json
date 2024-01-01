@@ -1,0 +1,78 @@
+
+[
+    {
+      "id": 1,
+      "image": "/src/assets/google png.png",
+      "title": "Software Engineer",
+      "company": "Google",
+      "position": "Senior",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 2,
+      "image": "/src/assets/meta png.png",
+      "title": "Web Developer",
+      "company": "Meta",
+      "position": "Junior",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et."
+    },
+    {
+      "id": 3,
+      "image": "/src/assets/twitter.png",
+      "title": "Data Scientist",
+      "company": "Data Insights",
+      "position": "Internship",
+      "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "id": 4,
+      "image" : "/src/assets/telegram png.png",
+      "title": "UX Designer",
+      "company": "DesignHub",
+      "position": "Senior",
+      "description": "Nulla facilisi. Sed auctor lacus in massa convallis hendrerit."
+    },
+    {
+      "id": 5,
+      "title": "Network Administrator",
+      "company": "NetSys Solutions",
+      "position": "Junior",
+      "description": "Curabitur euismod felis vitae elit ullamcorper, nec scelerisque ligula efficitur."
+    },
+    {
+      "id": 6,
+      "title": "Marketing Specialist",
+      "company": "MarketBoost",
+      "position": "Internship",
+      "description": "Vivamus auctor, risus nec congue gravida, ligula elit ultricies nisi."
+    },
+    {
+      "id": 7,
+      "title": "Hardware Engineer",
+      "company": "TechGears",
+      "position": "Senior",
+      "description": "Phasellus id justo sit amet nulla efficitur venenatis vel ac leo."
+    },
+    {
+      "id": 8,
+      "title": "Mobile App Developer",
+      "company": "AppCraft",
+      "position": "Junior",
+      "description": "Integer eu justo eu orci cursus dictum non a turpis."
+    },
+    {
+      "id": 9,
+      "title": "Finance Intern",
+      "company": "FinanceCorp",
+      "position": "Internship",
+      "description": "Fusce vel libero eu justo malesuada volutpat vel ac elit."
+    },
+    {
+      "id": 10,
+      "title": "Cybersecurity Analyst",
+      "company": "SecureTech",
+      "position": "Senior",
+      "description": "Quisque vel quam nec elit luctus bibendum sit amet ut turpis."
+    }
+  ]
+

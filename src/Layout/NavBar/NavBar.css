@@ -17,7 +17,7 @@ body {
 }
 .navigation-bar-section {
   display: flex;
-  align-items: center;
+  align-items: center; 
 }
 .user-info {
   display: flex;
