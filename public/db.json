@@ -20,7 +20,7 @@
       "id": 3,
       "image": "/src/assets/twitter.png",
       "title": "Data Scientist",
-      "company": "Data Insights",
+      "company": "Twitter",
       "position": "Internship",
       "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
@@ -28,49 +28,55 @@
       "id": 4,
       "image" : "/src/assets/telegram png.png",
       "title": "UX Designer",
-      "company": "DesignHub",
+      "company": "Telegram",
       "position": "Senior",
       "description": "Nulla facilisi. Sed auctor lacus in massa convallis hendrerit."
     },
     {
       "id": 5,
+      "image": "/src/assets/insta png.png",
       "title": "Network Administrator",
-      "company": "NetSys Solutions",
+      "company": "Instagram",
       "position": "Junior",
-      "description": "Curabitur euismod felis vitae elit ullamcorper, nec scelerisque ligula efficitur."
+      "description": "Curabitur euismod felis vitae elit ullamcorper, nec scelerisque ligula."
     },
     {
       "id": 6,
+      "image": "/src/assets/thread png.png",
       "title": "Marketing Specialist",
-      "company": "MarketBoost",
+      "company": "Thread",
       "position": "Internship",
       "description": "Vivamus auctor, risus nec congue gravida, ligula elit ultricies nisi."
     },
     {
       "id": 7,
+      "image":"/src/assets/discord.png",
       "title": "Hardware Engineer",
-      "company": "TechGears",
+      "company": "Discord",
       "position": "Senior",
       "description": "Phasellus id justo sit amet nulla efficitur venenatis vel ac leo."
     },
     {
       "id": 8,
+      "image": "/src/assets/github.png",
       "title": "Mobile App Developer",
-      "company": "AppCraft",
-      "position": "Junior",
+      "company": "Github",
+      "position": "Senior",
       "description": "Integer eu justo eu orci cursus dictum non a turpis."
     },
     {
       "id": 9,
+      "image" : "/src/assets/true caller.png",
       "title": "Finance Intern",
-      "company": "FinanceCorp",
+      "company": "True Caller",
       "position": "Internship",
       "description": "Fusce vel libero eu justo malesuada volutpat vel ac elit."
     },
     {
       "id": 10,
+      "image": "/src/assets/apple.png",
       "title": "Cybersecurity Analyst",
-      "company": "SecureTech",
+      "company": "Apple",
       "position": "Senior",
       "description": "Quisque vel quam nec elit luctus bibendum sit amet ut turpis."
     }
