@@ -1,25 +1,44 @@
+import { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { CiMenuBurger } from "react-icons/ci";
-import { IoMdClose } from "react-icons/io";
-import "./NavBar.css";
-import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.init";
-//
+import "./NavBar.css";
+
 const NavBar = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsOpen(!isOpen);
+  };
+
   const logOut = () => {
     signOut(auth).then((res) => {
       navigate("/");
       console.log(res);
     });
   };
-  const [openBurger, setOpenBurger] = useState(false);
+
   const navLinkStyle = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
     };
   };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (isOpen && !event.target.closest(".nav-bar-container")) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isOpen]);
+
   return (
     <div className='nav-bar-container'>
       <div className='navigation-bar-section'>
@@ -33,19 +52,11 @@ const NavBar = () => {
           </Link>
         </div>
 
-        <div onClick={() => setOpenBurger(!openBurger)} className='toggle-btn'>
-          {openBurger ? (
-            <i className='closeHam'>
-              <IoMdClose />
-            </i>
-          ) : (
-            <i className='openHam'>
-              <CiMenuBurger />
-            </i>
-          )}
+        <div className='toggle-btn' onClick={toggleNav}>
+          ☰
         </div>
 
-        <div className={`navBar ${openBurger && "show"}`}>
+        <div className={`navBar ${isOpen ? "open" : ""}`}>
           <ul>
             <div className='navigation-name'>
               <li>
@@ -99,14 +110,9 @@ const NavBar = () => {
               <div className='user-info'>
                 <li>
                   {auth.currentUser ? (
-                    <NavLink>
-                      {" "}
-                      <span>User Name: </span>
-                      {auth.currentUser?.displayName}
-                    </NavLink>
+                    <NavLink> {auth.currentUser?.displayName}</NavLink>
                   ) : (
                     <NavLink>
-                      <span>User Name :</span>
                       <strong>No User</strong>
                     </NavLink>
                   )}
@@ -129,45 +135,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-// import { FaFacebookF } from "react-icons/fa";
-// import { FaInstagram } from "react-icons/fa";
-// import { CiTwitter } from "react-icons/ci";
-// import { auth } from './../../firebase.init';
-{
-  /* <div className='social-section'>
-  //{" "}
-  <li className='social'>
-    //{" "}
-    <a href='https://www.facebook.com/'>
-      // <FaFacebookF size={20} />
-      // <i></i>
-      //{" "}
-    </a>
-    //{" "}
-  </li>
-  //{" "}
-  <li className='social'>
-    //{" "}
-    <a href='https://www.instagram.com/'>
-      // <FaInstagram size={20} />
-      // <i></i>
-      //{" "}
-    </a>
-    //{" "}
-  </li>
-  //{" "}
-  <li className='social'>
-    //{" "}
-    <a href='https://twitter.com/'>
-      // <CiTwitter size={22} />
-      // <i></i>
-      //{" "}
-    </a>
-    //{" "}
-  </li>
-  //{" "} */
-}
-{
-  /* </div>; */
-}

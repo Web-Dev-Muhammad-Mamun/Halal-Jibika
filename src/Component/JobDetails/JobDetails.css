@@ -1,0 +1,83 @@
+.details-card {
+  margin: 0 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+/* JobDetails.css */
+
+.details-card {
+  max-width: 350px;
+  margin: 130px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.details-image-company {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.details-image-company img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.details-image-company p {
+  font-weight: bold;
+}
+
+.details-card h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details-card h3 {
+  display: flex;
+  align-items: center;
+  color: #f0555b;
+  margin-bottom: 15px;
+}
+
+.details-button-container {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.details-favorite-button,
+.details-apply-button,
+.details-edit-button,
+.details-back {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.details-favorite-button {
+  background-color: #f0555b;
+}
+
+.details-apply-button {
+  background-color: #3498db;
+}
+
+.details-edit-button {
+  background-color: #2ecc71;
+}
+
+.details-back {
+  margin-top: 10px;
+}

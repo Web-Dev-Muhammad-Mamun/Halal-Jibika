@@ -83,7 +83,7 @@ li {
   display: none;
 }
 .navBar ul li .sign-btn {
-border: 2px solid #f0555b;
+  border: 2px solid #f0555b;
   padding: 8px;
   border-radius: 5px;
 }
@@ -92,152 +92,40 @@ border: 2px solid #f0555b;
   border: 2px solid #fff;
   background: #f0555b;
 }
-/* responsive */
-@media only screen and (max-width: 500px) {
-  .navigation-bar-section {
-    padding-inline: 1.2rem;
-    justify-content: space-around;
-    position: relative;
-  }
-  .nav-bar-container {
-    width: 100%;
-    position: relative;
-  }
-
-  .navBar {
-    position: absolute;
-    transition: all 0.2s;
-    top: 5rem;
-    z-index: 1001;
-  }
-  .logo {
-    width: 200px;
-  }
-  .navBar ul li {
-    padding: 8px 3px;
-    margin-bottom: 3px;
-    margin-right: 20px;
-  }
-
-  .show {
-    left: 8rem;
-    justify-content: center;
-    align-items: center;
-    border-left: 2px solid #f0555b;
-    background: black;
-  }
-
-  .user-info {
-    display: block;
-    margin-left: 0; /* Adjust as needed */
-    align-items: center;
-    gap: 1rem;
-    font-size: 16px;
-  }
-}
 
 @media only screen and (max-width: 768px) {
   .navigation-bar-section {
-    justify-content: space-around;
-    position: relative;
   }
-
-  .nav-bar-container {
-    z-index: 1001;
-    position: relative;
-  }
-
   .navBar {
     position: absolute;
-    transition: all 0.2s;
-    top: 5rem;
-    left: 0;
-    z-index: 1001;
-    left: 22.5rem;
-  }
-
-  .navBar ul li {
-    padding: 8px 3px;
-    margin-bottom: 3px;
-    margin-right: 20px;
-  }
-
-  .navigation-name {
     display: block;
-  }
-
-  .toggle-btn {
-    display: block;
-    color: #f0555b;
-    font-size: 2rem;
-  }
-
-  .show {
-    left: 8rem;
-    justify-content: center;
-    align-items: center;
-    border-left: 2px solid #f0555b;
-    background: black;
-  }
-
-  .user-info {
-    display: block;
-    margin-left: 0; /* Adjust as needed */
-    align-items: center;
-    gap: 1rem;
-    font-size: 16px;
-  }
-}
-
-/* Responsive for tablet-sized screens */
-@media only screen and (max-width: 1024px) {
-  .navigation-bar-section {
-    justify-content: space-around;
-    position: relative;
     width: 100%;
+    top: 60px;
+    left: 300px;
+    z-index: 100;
   }
-
-  .navBar {
-    position: absolute;
-    transition: all 0.2s;
-    top: 5rem;
-    left: 45rem;
-    z-index: 10;
+  .navigation-name {
+    display: flex;
+    flex-direction: column;
   }
-
-  .navBar ul li a {
-    padding: 5px;
-  }
-
-  .navBar ul li {
-    padding: 8px 3px;
-    margin-bottom: 3px;
+  .toggle-btn {
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
     margin-right: 20px;
   }
 
-  .navigation-name {
+  .navBar.open {
     display: block;
+    background: #0b0d0c;
+    top: 60px;
+    left: 0;
+    width: 80%;
   }
-
-  .toggle-btn {
-    display: block;
-    color: #f0555b;
-    font-size: 2rem;
-  }
-
-  .show {
-    left: 32rem;
-    justify-content: center;
-    align-items: center;
-    border-left: 2px solid #f0555b;
-    background: black;
-  }
-
-  .user-info {
-    display: block;
-    margin-left: 0; /* Adjust as needed */
-    align-items: center;
-    gap: 1rem;
-    font-size: 16px;
+  .navBar.open ul li a {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
   }
 }

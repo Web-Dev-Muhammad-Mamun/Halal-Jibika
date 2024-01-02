@@ -9,12 +9,18 @@ import Favorite from "../Component/Favorite/Favorite";
 import Signin from "../Component/login/Signin";
 import SignUp from "../Component/SignUp/SignUp";
 import JobDetails from "../Component/JobDetails/JobDetails";
+import UpdateData from "../Component/UpdateData/UpdateData";
+import axios from "axios";
 // import axios from "axios";
 // import { axios } from 'axios';
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    id: "root",
+    loader: () => {
+      return axios.get("http://localhost:9000/jobs/");
+    },
     children: [
       {
         path: "/",
@@ -27,6 +33,10 @@ const Routes = createBrowserRouter([
       {
         path: "/jobs/:id",
         element: <JobDetails />,
+      },
+      {
+        path: "/jobsDetails/:editJobs",
+        element: <UpdateData />,
       },
       {
         path: "/about",

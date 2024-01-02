@@ -1,28 +1,8 @@
 .jobsContainer {
-  margin: 0 2rem;
+  margin: 5.5rem 2rem;
   justify-content: center;
   align-items: center;
   gap: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-/* media responsive */
-
-/* small mobile */
-@media (max-width: 500px) {
-  .jobsContainer {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-/* tab */
-@media (min-width: 601px) and (max-width: 768px) {
-    .jobsContainer {
-        grid-template-columns: repeat(2,1fr);
-    }
-}
-/* large size device */
-@media screen and (max-width: 1024px) {
-.jobsContainer {
-    grid-template-columns: repeat(2,1fr);
-}
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }

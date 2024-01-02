@@ -3,14 +3,18 @@ import { FaHeart, FaEdit, FaTrash } from "react-icons/fa";
 import { GiPositionMarker } from "react-icons/gi";
 import "./job.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const Job = ({ job }) => {
-  const { id, image, title, company, position, description } = job;
+  const { id, image, title, companyName, position, description } = job;
+  const handleDelete = async (id) => {
+    axios.delete(`http://localhost:9000/jobs/${id}`);
+  };
   return (
     <div>
       <div className='card'>
         <div className='image-company'>
           <img src={image} alt='' />
-          <p>{company}</p>
+          <p>{companyName}</p>
         </div>
         <h2>{title}</h2>
         <h3>
@@ -25,9 +29,11 @@ const Job = ({ job }) => {
           </button>
           <button className='apply-button'>Apply Now</button>
           <button className='edit-button'>
-            <FaEdit className='icons edit-icon' />
+            <Link to={`/jobsDetails/${id}`}>
+              <FaEdit className='icons edit-icon' />
+            </Link>
           </button>
-          <button className='delete-button'>
+          <button className='delete-button' onClick={() => handleDelete(id)}>
             <FaTrash className='icons delete-icon' />
           </button>
         </div>
