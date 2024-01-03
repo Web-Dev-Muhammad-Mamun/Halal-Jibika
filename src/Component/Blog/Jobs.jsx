@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Job from "./Job";
 import "./jobs.css";
 import axios from "axios";
+import { global } from "../../CreateContext/ContextGlobal";
 
 const Jobs = () => {
-  const [allJobs, setAllJobs] = useState([]);
+  const { setAllJobs, theallJobs } = useContext(global);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,7 +20,7 @@ const Jobs = () => {
   }, []);
   return (
     <div className='jobsContainer'>
-      {allJobs.map((job) => (
+      {theallJobs.map((job) => (
         <Job key={job.id} job={job}></Job>
       ))}
     </div>

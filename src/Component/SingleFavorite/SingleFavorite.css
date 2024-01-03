@@ -1,0 +1,52 @@
+/* Common styles for all screen sizes */
+.single-details-card {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  background: #333;
+}
+.single-image-company {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background: #f0555b;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.single-image-company img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.details-image-company p {
+  font-weight: bold;
+  color: #fff;
+}
+
+.details-card h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.details-card h3 {
+  display: flex;
+  align-items: center;
+  color: #f0555b;
+  margin-bottom: 15px;
+}
+.details-button-container button {
+  background-color: #333;
+  color: #f0555b;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #fff
+}
+
+
+

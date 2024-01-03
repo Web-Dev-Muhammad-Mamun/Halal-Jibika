@@ -13,16 +13,16 @@
   margin: 130px auto;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background: #333333;
   border-radius: 8px;
+  border: 2px solid #f0555b;
 }
 
 .details-image-company {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  background: #333;
 }
-
 .details-image-company img {
   width: 50px;
   height: 50px;
@@ -32,31 +32,25 @@
 
 .details-image-company p {
   font-weight: bold;
+  color: #fff;
 }
 
 .details-card h2 {
-  color: #333;
-  margin-bottom: 10px;
+  color: #fff;
 }
 
 .details-card h3 {
   display: flex;
   align-items: center;
   color: #f0555b;
-  margin-bottom: 15px;
 }
 
 .details-button-container {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
-  margin-top: 20px;
   gap: 5px;
 }
-
-.details-favorite-button,
 .details-apply-button,
-.details-edit-button,
 .details-back {
   background-color: #333;
   color: #fff;
@@ -64,20 +58,4 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.details-favorite-button {
-  background-color: #f0555b;
-}
-
-.details-apply-button {
-  background-color: #3498db;
-}
-
-.details-edit-button {
-  background-color: #2ecc71;
-}
-
-.details-back {
-  margin-top: 10px;
 }
