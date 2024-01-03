@@ -15,15 +15,7 @@ const JobDetail = ({ appliedJobs }) => {
   const [singleJob, setSingleJob] = useState({});
   const [clicked, setClicked] = useState(false);
   //
-  const handleClickApply = (appliedJobs) => {
-    console.log(appliedJobs);
-    const status =
-      appliedJobs.isApplied === "undefined" ? true : !appliedJobs.isApplied;
-    axios.put(`http://localhost:9000/jobs/${appliedJobs.id}`, {
-      ...appliedJobs,
-      isApplied: status,
-    });
-
+  const handleClickApply = () => {
     setClicked(true);
     Swal.fire({
       icon: "success",
@@ -77,22 +69,17 @@ const JobDetail = ({ appliedJobs }) => {
         <p>{description}</p>
 
         <div className='details-button-container'>
-          <button
-            onClick={() => handleClickApply(appliedJobs)}
-            className='details-apply-button'>
-            Apply Now
-          </button>
-          {/* {!clicked ? (
-          <button
-            onClick={() => handleClickApply(theallJobs)}
-            className='details-apply-button'>
-            Apply Now
-          </button>
-        ) : (
-          <button onClick={handleApplied} className='details-apply-button'>
-            Applied
-          </button>
-        )} */}
+          {!clicked ? (
+            <button
+              onClick={() => handleClickApply()}
+              className='details-apply-button'>
+              Apply Now
+            </button>
+          ) : (
+            <button onClick={handleApplied} className='details-apply-button'>
+              Applied
+            </button>
+          )}
 
           <Link to={`/jobsDetails/${id}`}></Link>
           <Link to={-1}>

@@ -5,7 +5,6 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase.init";
 import Swal from "sweetalert2";
-
 const Login = () => {
   const navigate = useNavigate();
   const handleLogin = (e) => {
@@ -27,40 +26,42 @@ const Login = () => {
   };
 
   return (
-    <div className='login-container'>
-      {<h1>{}</h1>}
-      {<h1></h1>}
-      <h2 className='login-title'>Sign In</h2>
-      <form className='login-form' onSubmit={handleLogin}>
-        <div className='form-group'>
-          <input type='email' name='email' placeholder='Enter your email' />
+    <div className='sign-in-container'>
+      <div className='login-container'>
+        {<h1></h1>}
+        {<h1></h1>}
+        <h2 className='login-title'>Sign In</h2>
+        <form className='login-form' onSubmit={handleLogin}>
+          <div className='form-group'>
+            <input type='email' name='email' placeholder='Enter your email' />
+          </div>
+          <div className='form-group'>
+            <input
+              type='password'
+              id='password'
+              name='password'
+              placeholder='Enter your password'
+            />
+          </div>
+          <div className='form-group'>
+            <button className='login-btn' type='submit'>
+              Login
+            </button>
+          </div>
+        </form>
+        <div className='no-account'>
+          <small>
+            don't have an account ? <Link to='/signup '>sign up</Link>
+          </small>
+          <div className='back-btns'>
+            <NavigateBtn />
+          </div>{" "}
+          <div className='or-sign-in'>
+            <h1>or</h1>
+            <h2 className=''>login with</h2>
+          </div>
+          <SocialLogin />
         </div>
-        <div className='form-group'>
-          <input
-            type='password'
-            id='password'
-            name='password'
-            placeholder='Enter your password'
-          />
-        </div>
-        <div className='form-group'>
-          <button className='login-btn' type='submit'>
-            Login
-          </button>
-        </div>
-      </form>
-      <div className='no-account'>
-        <small>
-          don't have an account ? <Link to='/signup '>sign up</Link>
-        </small>
-        <div className='back-btns'>
-          <NavigateBtn />
-        </div>{" "}
-        <div className='or-sign-in'>
-          <h1>or</h1>
-          <h2 className=''>login with</h2>
-        </div>
-        <SocialLogin />
       </div>
     </div>
   );

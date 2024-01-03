@@ -2,6 +2,7 @@
   border-radius: 8px;
   padding: 35px;
   margin: 10px 10px;
+  height: 22rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #333;
   align-items: center;
@@ -61,22 +62,9 @@
 .heart {
   color: red !important;
 }
-/* .edit-button a {
-  color: #fff
-  ;
-} */
-/* .see_details {
-  display: flex;
-  margin: 4px auto;
-  border: 2px solid #f0555b;
-  color: #f0555b;
-  font-weight: bold;
-  width: 14rem;
-  justify-content: center;
-  padding: 4px 0;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, opacity 0.8s ease, transform 0.3s ease;
-} */
+.edit-button a {
+  color: #fff;
+}
 .delete-icon {
   color: red;
 }
@@ -102,7 +90,6 @@
   }
 
   .favorite-button,
-  .apply-button,
   .edit-button,
   .delete-button {
     width: 100%;

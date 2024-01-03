@@ -1,3 +1,4 @@
+import Jobs from "../Blog/Jobs";
 import "./Home.css";
 import { Link } from "react-router-dom";
 const Home = () => {
@@ -26,6 +27,12 @@ const Home = () => {
           />
         </div>
       </div>
+
+      <fieldset className='latest-job'>
+        <legend>Latest Job</legend>
+      </fieldset>
+
+      <Jobs />
     </div>
   );
 };

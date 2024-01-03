@@ -33,9 +33,10 @@ const UpdateData = () => {
   return (
     <div className='updated-data'>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className='update-label'>
           Title:
           <input
+            className='update-input'
             type='text'
             name='title'
             value={formData.title}
@@ -43,9 +44,10 @@ const UpdateData = () => {
           />
         </label>
         <br />
-        <label>
-          Title:
+        <label className='update-label'>
+           logo:
           <input
+            className='update-input'
             type='text'
             name='logo'
             value={formData.logo}
@@ -53,9 +55,10 @@ const UpdateData = () => {
           />
         </label>
         <br />
-        <label>
+        <label className='update-label'>
           Company Name:
           <input
+            className='update-input'
             type='text'
             name='companyName'
             value={formData.companyName}
@@ -63,9 +66,10 @@ const UpdateData = () => {
           />
         </label>
         <br />
-        <label>
+        <label className='update-label'>
           Position:
           <input
+            className='update-input'
             type='text'
             name='position'
             value={formData.position}
@@ -73,9 +77,10 @@ const UpdateData = () => {
           />
         </label>
         <br />
-        <label>
+        <label className='update-label'>
           Description:
           <textarea
+            className='update-input'
             name='description'
             value={formData.description}
             onChange={handleInputChange}
@@ -83,7 +88,9 @@ const UpdateData = () => {
         </label>
         <br />
 
-        <button type='submit'>Post Data</button>
+        <button className='update-submit-btn' type='submit'>
+          Post Data
+        </button>
       </form>
     </div>
   );
