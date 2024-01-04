@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.init";
 import "./NavBar.css";
-
+import logo from "../../assets/mainLogo.png";
 const NavBar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -44,11 +44,7 @@ const NavBar = () => {
       <div className='navigation-bar-section'>
         <div className='logo-section'>
           <Link to='/'>
-            <img
-              className='logo'
-              src='/src/assets/Screenshot_2023-12-30_164300-removebg-preview.png'
-              alt=''
-            />
+            <img className='logo' src={logo} alt='' />
           </Link>
         </div>
 
