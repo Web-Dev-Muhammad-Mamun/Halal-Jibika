@@ -43,14 +43,22 @@ const Routes = createBrowserRouter([
 
       {
         path: "/jobdetails/:id",
-        element: <JobDetails />,
+        element: (
+          <PrivateRoutes>
+            <JobDetails />
+          </PrivateRoutes>
+        ),
         loader: ({ params }) => {
           return fetch(`http://localhost:9000/jobs/${params.id}`);
         },
       },
       {
         path: "/jobsDetails/:editJobs",
-        element: <UpdateData />,
+        element: (
+          <PrivateRoutes>
+            <UpdateData />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/about",
@@ -63,7 +71,12 @@ const Routes = createBrowserRouter([
 
       {
         path: "/favorite",
-        element: <Favorite />,
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <Favorite />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/signin",
@@ -75,7 +88,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/addjobs",
-        element: <AddNewJob />,
+        element: (
+          <PrivateRoutes>
+            <AddNewJob />
+          </PrivateRoutes>
+        ),
       },
     ],
   },

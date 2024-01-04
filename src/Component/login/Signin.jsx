@@ -13,7 +13,6 @@ const Login = () => {
     const password = e.target.password.value;
     signInWithEmailAndPassword(auth, email, password)
       .then((UserCredential) => {
-        console.log(UserCredential.user.displayName);
         navigate("/");
       })
       .catch((error) => {
