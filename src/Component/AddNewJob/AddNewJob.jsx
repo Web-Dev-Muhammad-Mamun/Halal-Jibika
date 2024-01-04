@@ -41,6 +41,7 @@ const AddNewJob = () => {
             name='title'
             value={formData.title}
             onChange={handleChange}
+            placeholder='Enter Company Title Name'
           />
         </label>
         <br />
@@ -52,6 +53,7 @@ const AddNewJob = () => {
             name='logo'
             value={formData.logo}
             onChange={handleChange}
+            placeholder='Enter Company Logo '
           />
         </label>
         <br />
@@ -63,6 +65,7 @@ const AddNewJob = () => {
             name='companyName'
             value={formData.companyName}
             onChange={handleChange}
+            placeholder='Enter Company Name'
           />
         </label>
         <br />
@@ -74,6 +77,7 @@ const AddNewJob = () => {
             name='position'
             value={formData.position}
             onChange={handleChange}
+            placeholder='Enter Position Of Employ Your Company want '
           />
         </label>
         <br />
@@ -84,6 +88,7 @@ const AddNewJob = () => {
             name='description'
             value={formData.description}
             onChange={handleChange}
+            placeholder='Enter Company Description'
           />
         </label>
         <br />

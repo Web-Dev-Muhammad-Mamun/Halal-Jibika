@@ -5,6 +5,7 @@ import axios from "axios";
 import { global } from "../../CreateContext/ContextGlobal";
 import Swal from "sweetalert2";
 import useFetch from "./../CustomHook/CustomHook";
+import { Link } from "react-router-dom";
 
 const Jobs = () => {
   const { data } = useFetch("http://localhost:9000/jobs");
@@ -35,15 +36,22 @@ const Jobs = () => {
     setFaveState(data);
   }, [data]);
   return (
-    <div className='jobsContainer'>
-      {faveState.map((job) => (
-        <Job
-          key={job.id}
-          job={job}
-          faveState={faveState}
-          setFaveState={setFaveState}
-          handleDelete={handleDelete}></Job>
-      ))}
+    <div>
+      <div className='add-job-link'>
+        <li>
+          <Link to={"/addjobs"}>Add Your Own JOb</Link>
+        </li>
+      </div>
+      <div className='jobsContainer'>
+        {faveState.map((job) => (
+          <Job
+            key={job.id}
+            job={job}
+            faveState={faveState}
+            setFaveState={setFaveState}
+            handleDelete={handleDelete}></Job>
+        ))}
+      </div>
     </div>
   );
 };

@@ -14,6 +14,7 @@ import axios from "axios";
 import NotFound from "../Component/NotFound/NotFound";
 import AppliedJob from "../Component/AppliedJob/AppliedJob";
 import AddNewJob from "./../Component/AddNewJob/AddNewJob";
+import PrivateRoutes from "./PrivateRoute";
 const Routes = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +34,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/appliedjob",
-        element: <AppliedJob />,
+        element: (
+          <PrivateRoutes>
+            <AppliedJob />
+          </PrivateRoutes>
+        ),
       },
 
       {
