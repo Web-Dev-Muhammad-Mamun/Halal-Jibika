@@ -70,11 +70,6 @@ const NavBar = () => {
                   Applied Job
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink style={navLinkStyle} to='./addjobs'>
-                  Add JOb
-                </NavLink>
-              </li> */}
 
               <li>
                 <NavLink style={navLinkStyle} to='./jobs'>

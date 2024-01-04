@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { GiPositionMarker } from "react-icons/gi";
+import "./SingleApplied.css";
 /* eslint-disable react/prop-types */
 const SingleApplied = ({ applied }) => {
   // eslint-disable-next-line no-unused-vars
   const { id, logo, title, companyName, position, description } = applied;
-  console.log(applied);
   return (
     <div>
       <div className='details-card'>

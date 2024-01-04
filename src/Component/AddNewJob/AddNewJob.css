@@ -1,5 +1,12 @@
 .addjob-container {
-    margin: 8rem auto;
-    display: flex;
-    justify-content: center;
+  margin: 8rem auto;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #f0555b;
+  width: 500px;
+  padding: 20px;
+}
+.update-input {
+    border-radius: 10px;
+    
 }

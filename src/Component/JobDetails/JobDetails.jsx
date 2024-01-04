@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 import JobDetail from "./../JobDetail/JobDetail";
 const JobDetails = () => {
   const [allJobs, setAllJobs] = useState([]);
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +19,10 @@ const JobDetails = () => {
         const response = await axios.get("http://localhost:9000/jobs");
         setAllJobs(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        Swal.fire({
+          icon: "error",
+          title: error,
+        });
       }
     };
     fetchData();
@@ -26,7 +30,6 @@ const JobDetails = () => {
 
   const { title, logo, companyName, position, description, id } =
     useLoaderData();
-  console.log(title);
   return (
     <div>
       {allJobs.map((alljob) => (

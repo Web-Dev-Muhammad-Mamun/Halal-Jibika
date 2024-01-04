@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import axios from "axios";
+import axios, { all } from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 // import { FaHeart, FaEdit } from "react-icons/fa";
 import { GiPositionMarker } from "react-icons/gi";
 
 import Swal from "sweetalert2";
-
+import useFetch from "../CustomHook/CustomHook";
 const JobDetail = ({
   id,
   description,
@@ -18,12 +18,29 @@ const JobDetail = ({
 }) => {
   const [clicked, setClicked] = useState(false);
   //
+
+  const { data } = useFetch("http://localhost:9000/jobs");
+  const [applyState, setapplyState] = useState(data);
   const handleClickApply = (alljob) => {
     const status = alljob.isApplyed === "undefined" ? true : !alljob.isApplyed;
-    axios.put(`http://localhost:9000/jobs/${alljob.id}`, {
-      ...alljob,
-      isApplyed: status,
-    });
+    axios
+      .put(`http://localhost:9000/jobs/${alljob.id}`, {
+        ...alljob,
+        isApplyed: status,
+      })
+      .then(() => {
+        setapplyState(
+          applyState.map((appl) => {
+            if (appl.id === alljob.id) {
+              return {
+                ...appl,
+                isApplyed: status,
+              };
+            }
+            return appl;
+          })
+        );
+      });
     setClicked(true);
     Swal.fire({
       icon: "success",
@@ -61,7 +78,9 @@ const JobDetail = ({
           {!clicked ? (
             <button
               onClick={() => handleClickApply(alljob)}
-              className='details-apply-button'>
+              className={`details-apply-button ${
+                alljob.isApplyed ? "done" : null
+              }`}>
               Apply Now
             </button>
           ) : (

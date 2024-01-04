@@ -7,7 +7,7 @@ import axios from "axios";
 const Job = ({ handleDelete, job, setFaveState, faveState }) => {
   const { id, logo, title, companyName, position, description } = job;
 
-  const handleClickApply = (job) => {
+  const handleClickFavorite = (job) => {
     console.log(job);
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
     axios
@@ -32,6 +32,9 @@ const Job = ({ handleDelete, job, setFaveState, faveState }) => {
 
   return (
     <div data-aos='fade-up-right'>
+      <li>
+        <Link to={"/addjobs"}>Add JOb</Link>
+      </li>
       <div className='card'>
         <div className='image-company'>
           <img src={logo} alt='' />
@@ -47,7 +50,7 @@ const Job = ({ handleDelete, job, setFaveState, faveState }) => {
         <div className='button-container'>
           <button
             onClick={() => {
-              handleClickApply(job);
+              handleClickFavorite(job);
             }}
             className='favorite-button'>
             <FaHeart
