@@ -21,10 +21,7 @@ const Home = () => {
         </div>
 
         <div className='hero-image'>
-          <img
-            src='/src/assets/hero image png.png'
-            alt=''
-          />
+          <img src='/src/assets/heroimagepng.png' alt='' />
         </div>
       </div>
       <fieldset className='latest-job'>

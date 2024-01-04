@@ -4,7 +4,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.init";
 import "./NavBar.css";
 import logo from "../../assets/mainLogo.png";
-import user from '../../assets/512x512bb-removebg-preview.png'
+import user from '../../assets/user.png'
 // /src/assets/512x512bb-removebg-preview.png
 const NavBar = () => {
   const navigate = useNavigate();
