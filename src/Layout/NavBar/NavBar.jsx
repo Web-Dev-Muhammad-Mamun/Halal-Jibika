@@ -4,6 +4,8 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.init";
 import "./NavBar.css";
 import logo from "../../assets/mainLogo.png";
+import user from '../../assets/512x512bb-removebg-preview.png'
+// /src/assets/512x512bb-removebg-preview.png
 const NavBar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -124,7 +126,7 @@ const NavBar = () => {
                     <img src={auth.currentUser?.photoURL} alt='profilePic' />
                   ) : (
                     <img
-                      src='/src/assets/512x512bb-removebg-preview.png'
+                      src={user}
                       alt=''
                     />
                   )}
