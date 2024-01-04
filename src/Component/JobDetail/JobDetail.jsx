@@ -1,21 +1,29 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 // import { FaHeart, FaEdit } from "react-icons/fa";
 import { GiPositionMarker } from "react-icons/gi";
 
 import Swal from "sweetalert2";
 
-const JobDetail = ({ appliedJobs }) => {
-  //
-  console.log(appliedJobs);
-  const param = useParams().id;
-  const [allJobs, setAllJobs] = useState([]);
-  const [singleJob, setSingleJob] = useState({});
+const JobDetail = ({
+  id,
+  description,
+  position,
+  companyName,
+  logo,
+  title,
+  alljob,
+}) => {
   const [clicked, setClicked] = useState(false);
   //
-  const handleClickApply = () => {
+  const handleClickApply = (alljob) => {
+    const status = alljob.isApplyed === "undefined" ? true : !alljob.isApplyed;
+    axios.put(`http://localhost:9000/jobs/${alljob.id}`, {
+      ...alljob,
+      isApplyed: status,
+    });
     setClicked(true);
     Swal.fire({
       icon: "success",
@@ -34,26 +42,7 @@ const JobDetail = ({ appliedJobs }) => {
       width: "300px",
     });
   };
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:9000/jobs");
-        setAllJobs(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
 
-  useEffect(() => {
-    allJobs.find((job) => {
-      if (job.id == +param) {
-        setSingleJob(job);
-      }
-    });
-  }, [allJobs, param]);
-  const { id, logo, title, companyName, position, description } = singleJob;
   return (
     <div>
       <div className='details-card'>
@@ -71,7 +60,7 @@ const JobDetail = ({ appliedJobs }) => {
         <div className='details-button-container'>
           {!clicked ? (
             <button
-              onClick={() => handleClickApply()}
+              onClick={() => handleClickApply(alljob)}
               className='details-apply-button'>
               Apply Now
             </button>

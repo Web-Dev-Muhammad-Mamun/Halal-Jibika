@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
-
 import { GiPositionMarker } from "react-icons/gi";
-import "./SingleFavorite.css";
 /* eslint-disable react/prop-types */
-const SingleFavoriteJob = ({ favorite }) => {
+const SingleApplied = ({ applied }) => {
   // eslint-disable-next-line no-unused-vars
-  const { id, logo, title, companyName, position, description } = favorite;
-  console.log(favorite);
+  const { id, logo, title, companyName, position, description } = applied;
+  console.log(applied);
   return (
     <div>
       <div className='details-card'>
-        <h1 style={{ color: "white" }}>Favorite Job : {id}</h1>
+        <h1 style={{ color: "white" }}>Applied Job : {id}</h1>
         <div className='details-image-company'>
           <img src={logo} alt='' />
           <p>{companyName}</p>
@@ -33,4 +31,4 @@ const SingleFavoriteJob = ({ favorite }) => {
   );
 };
 
-export default SingleFavoriteJob;
+export default SingleApplied;

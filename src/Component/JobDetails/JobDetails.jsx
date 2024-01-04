@@ -1,28 +1,16 @@
 /* eslint-disable no-unused-vars */
 import "./JobDetails.css";
-import JobDetail from "../JobDetail/JobDetail";
-import { useContext, useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
 import axios from "axios";
-import { global } from "../../CreateContext/ContextGlobal";
-const JobDetails = () => {
-  // const [datas, setDatas] = useState([]);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:9000/jobs");
-  //       setDatas(response.data);
-  //       console.log(datas);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+import { useEffect, useState } from "react";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+// import { FaHeart, FaEdit } from "react-icons/fa";
+import { GiPositionMarker } from "react-icons/gi";
 
-  // const mepJobs = theallJobs.map((singleJob) => (
-  //   <JobDetail key={singleJob.id} singleJob={singleJob} />
-  // ));
-  const { setAllJobs, theallJobs } = useContext(global);
+import Swal from "sweetalert2";
+import JobDetail from "./../JobDetail/JobDetail";
+const JobDetails = () => {
+  const [allJobs, setAllJobs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,10 +23,23 @@ const JobDetails = () => {
     };
     fetchData();
   }, []);
+
+  const { title, logo, companyName, position, description, id } =
+    useLoaderData();
+  console.log(title);
   return (
-    <div className='jobsContainer'>
-      {theallJobs.map((appliedJobs) => (
-        <JobDetail key={appliedJobs.id} appliedJobs={appliedJobs} />
+    <div>
+      {allJobs.map((alljob) => (
+        <JobDetail
+          key={alljob.id}
+          alljob={alljob}
+          id={id}
+          title={title}
+          logo={logo}
+          companyName={companyName}
+          position={position}
+          description={description}
+        />
       ))}
     </div>
   );

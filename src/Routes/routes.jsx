@@ -12,7 +12,7 @@ import JobDetails from "../Component/JobDetails/JobDetails";
 import UpdateData from "../Component/UpdateData/UpdateData";
 import axios from "axios";
 import NotFound from "../Component/NotFound/NotFound";
-import AddNewJob from "../Component/AddNewJob/AddNewJob";
+import AppliedJob from "../Component/AppliedJob/AppliedJob";
 const Routes = createBrowserRouter([
   {
     path: "/",
@@ -31,12 +31,19 @@ const Routes = createBrowserRouter([
         element: <Jobs />,
       },
       {
-        path: "/addjobs",
-        element: <AddNewJob />,
+        path: "/appliedjob",
+        element: <AppliedJob />,
       },
+      // {
+      //   path: "/addjobs",
+      //   element: <AddNewJob />,
+      // },
       {
-        path: "/jobs/:id",
+        path: "/jobdetails/:id",
         element: <JobDetails />,
+        loader: ({ params }) => {
+          return fetch(`http://localhost:9000/jobs/${params.id}`);
+        },
       },
       {
         path: "/jobsDetails/:editJobs",

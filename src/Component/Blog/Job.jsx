@@ -4,18 +4,32 @@ import { GiPositionMarker } from "react-icons/gi";
 import "./job.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-const Job = ({ handleDelete, job }) => {
+const Job = ({ handleDelete, job, setFaveState, faveState }) => {
   const { id, logo, title, companyName, position, description } = job;
 
   const handleClickApply = (job) => {
     console.log(job);
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
-    axios.put(`http://localhost:9000/jobs/${job.id}`, {
-      ...job,
-      isTrue: status,
-    });
+    axios
+      .put(`http://localhost:9000/jobs/${job.id}`, {
+        ...job,
+        isTrue: status,
+      })
+      .then(() => {
+        setFaveState(
+          faveState.map((fav) => {
+            if (fav.id === job.id) {
+              return {
+                ...fav,
+                isTrue: status,
+              };
+            }
+            return fav;
+          })
+        );
+      });
   };
-  
+
   return (
     <div data-aos='fade-up-right'>
       <div className='card'>
@@ -50,7 +64,7 @@ const Job = ({ handleDelete, job }) => {
             <FaTrash className='icons delete-icon' />
           </button>
           <button className='see_details'>
-            <Link to={`/jobs/${id}`}> See Details</Link>
+            <Link to={`/jobdetails/${id}`}> See Details</Link>
           </button>
         </div>
       </div>
