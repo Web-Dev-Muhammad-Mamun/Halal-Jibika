@@ -11,8 +11,8 @@ import SignUp from "../Component/SignUp/SignUp";
 import JobDetails from "../Component/JobDetails/JobDetails";
 import UpdateData from "../Component/UpdateData/UpdateData";
 import axios from "axios";
-// import axios from "axios";
-// import { axios } from 'axios';
+import NotFound from "../Component/NotFound/NotFound";
+import AddNewJob from "../Component/AddNewJob/AddNewJob";
 const Routes = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +29,10 @@ const Routes = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: "/addjobs",
+        element: <AddNewJob />,
       },
       {
         path: "/jobs/:id",
@@ -60,6 +64,10 @@ const Routes = createBrowserRouter([
         element: <SignUp />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 

@@ -66,6 +66,12 @@ const NavBar = () => {
               </li>
 
               <li>
+                <NavLink style={navLinkStyle} to='./addjobs'>
+                  Add JOb
+                </NavLink>
+              </li>
+
+              <li>
                 <NavLink style={navLinkStyle} to='./jobs'>
                   Jobs
                 </NavLink>
@@ -89,42 +95,44 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li>
-                {auth.currentUser ? (
-                  <NavLink
-                    className='sign-btn'
-                    style={navLinkStyle}
-                    onClick={logOut}>
-                    Sign Out
-                  </NavLink>
-                ) : (
-                  <NavLink
-                    className='sign-btn'
-                    style={navLinkStyle}
-                    to='./signin'>
-                    Sign IN
-                  </NavLink>
-                )}
-              </li>
-
-              <div className='user-info'>
+              <div className='right-side-sec'>
                 <li>
                   {auth.currentUser ? (
-                    <NavLink> {auth.currentUser?.displayName}</NavLink>
+                    <NavLink
+                      className='sign-btn'
+                      style={navLinkStyle}
+                      onClick={logOut}>
+                      Sign Out
+                    </NavLink>
                   ) : (
-                    <NavLink>
-                      <strong>No User</strong>
+                    <NavLink
+                      className='sign-btn'
+                      style={navLinkStyle}
+                      to='./signin'>
+                      Sign IN
                     </NavLink>
                   )}
                 </li>
-                {auth.currentUser?.photoURL ? (
-                  <img src={auth.currentUser?.photoURL} alt='profilePic' />
-                ) : (
-                  <img
-                    src='/src/assets/512x512bb-removebg-preview.png'
-                    alt=''
-                  />
-                )}
+
+                <div className='user-info'>
+                  <li>
+                    {auth.currentUser ? (
+                      <NavLink> {auth.currentUser?.displayName}</NavLink>
+                    ) : (
+                      <NavLink>
+                        <strong>No User</strong>
+                      </NavLink>
+                    )}
+                  </li>
+                  {auth.currentUser?.photoURL ? (
+                    <img src={auth.currentUser?.photoURL} alt='profilePic' />
+                  ) : (
+                    <img
+                      src='/src/assets/512x512bb-removebg-preview.png'
+                      alt=''
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </ul>

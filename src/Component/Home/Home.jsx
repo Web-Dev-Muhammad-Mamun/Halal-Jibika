@@ -22,12 +22,11 @@ const Home = () => {
 
         <div className='hero-image'>
           <img
-            src='/src/assets/Screenshot_2023-12-30_171752-removebg-preview.png'
+            src='/src/assets/hero image png.png'
             alt=''
           />
         </div>
       </div>
-
       <fieldset className='latest-job'>
         <legend>Latest Job</legend>
       </fieldset>

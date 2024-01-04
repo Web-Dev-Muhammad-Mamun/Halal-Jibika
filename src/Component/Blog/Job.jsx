@@ -15,8 +15,9 @@ const Job = ({ handleDelete, job }) => {
       isTrue: status,
     });
   };
+  
   return (
-    <div>
+    <div data-aos='fade-up-right'>
       <div className='card'>
         <div className='image-company'>
           <img src={logo} alt='' />
@@ -39,7 +40,7 @@ const Job = ({ handleDelete, job }) => {
               className={`icons favorite-icon ${job.isTrue ? " heart" : null}`}
             />
           </button>
-        
+
           <button className='edit-button'>
             <Link to={`/jobsDetails/${id}`}>
               <FaEdit className='icons edit-icon' />
@@ -48,9 +49,9 @@ const Job = ({ handleDelete, job }) => {
           <button className='delete-button' onClick={() => handleDelete(id)}>
             <FaTrash className='icons delete-icon' />
           </button>
-        <button className='see_details'>
-          <Link to={`/jobs/${id}`}> See Details</Link>
-        </button>
+          <button className='see_details'>
+            <Link to={`/jobs/${id}`}> See Details</Link>
+          </button>
         </div>
       </div>
     </div>

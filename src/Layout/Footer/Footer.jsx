@@ -1,41 +1,41 @@
-import "./Footer.css";
-import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer className='footer'>
-      <div className='column'>
-        <h3>Company</h3>
-        <p>About Us</p>
-        <p>Contact Us</p>
-        <p>Privacy Policy</p>
+    <footer className="footer">
+      <div className="column">
+        <h4>About Us</h4>
+        <p>Your job search starts here. We connect talented individuals with great opportunities.</p>
       </div>
-      <div className='column'>
-        <h3>Job Seekers</h3>
-        <p>Search Jobs</p>
-        <p>Create Resume</p>
-        <p>Job Alerts</p>
+      <div className="column">
+        <h4>Job Categories</h4>
+        <ul>
+          <li>Technology</li>
+          <li>Healthcare</li>
+          <li>Finance</li>
+          <li>Marketing</li>
+        </ul>
       </div>
-      <div className='column'>
-        <h3>Employers</h3>
-        <p>Post a Job</p>
-        <p>Browse Resumes</p>
-        <p>Employer Dashboard</p>
+      <div className="column">
+        <h4>Contact Us</h4>
+        <p>Email: info@jobfinder.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
       </div>
-      <div className='column'>
-        <h3>Connect with Us</h3>
-        <div className='socialLinks'>
-          <a href='#' className='socialIcon' title='LinkedIn'>
-            <FaLinkedin />
+      <div className="column">
+        <h4>Follow Us</h4>
+        <div className="social-links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <FaFacebook />
           </a>
-          <a href='#' className='socialIcon' title='Twitter'>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <FaTwitter />
           </a>
-          <a href='#' className='socialIcon' title='GitHub'>
-            <FaGithub />
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <FaInstagram />
           </a>
-          <a href='#' className='socialIcon' title='Email'>
-            <FaEnvelope />
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
           </a>
         </div>
       </div>

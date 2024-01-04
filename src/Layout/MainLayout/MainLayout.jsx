@@ -1,13 +1,14 @@
-import NavBar from '../NavBar/NavBar'
-import { Outlet } from 'react-router-dom'
-import Footer from '../Footer/Footer'
+import NavBar from "../NavBar/NavBar";
+import { Outlet, ScrollRestoration } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 export default function MainLayout() {
   return (
     <div>
-        <NavBar />
-        <Outlet />
-        <Footer/>
+      <NavBar />
+      <ScrollRestoration />
+      <Outlet />
+      <Footer />
     </div>
-  )
+  );
 }

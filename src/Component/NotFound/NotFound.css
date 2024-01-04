@@ -1,0 +1,23 @@
+.notFound-container img {
+  display: flex;
+  margin: 0 auto;
+}
+.back-to-home-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: -80px;
+}
+.back-to-home-btn button {
+  width: 150px;
+  height: 30px;
+  background: #ff422e;
+  border: 2px solid #0b0d0c;
+  border-radius: 20px;
+  color: #fff;
+  transition: 0.5s all;
+}
+.back-to-home-btn button:hover {
+  background: #0b0d0c;
+  border: 2px solid #ff422e;
+  color: #ff422e;
+}

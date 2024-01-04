@@ -24,6 +24,7 @@ body {
   justify-content: center;
   z-index: 100;
   width: 100%;
+
 }
 
 .navigation-bar-section {
@@ -35,6 +36,8 @@ body {
   display: flex;
   align-items: center;
   font-size: 16px;
+  width: 100px;
+  margin-right: 8px;
 }
 
 .user-info span {
@@ -92,9 +95,14 @@ li {
   border: 2px solid #fff;
   background: #f0555b;
 }
-
+.right-side-sec {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 @media only screen and (max-width: 768px) {
   .navigation-bar-section {
+    width: 100%;
   }
   .navBar {
     position: absolute;

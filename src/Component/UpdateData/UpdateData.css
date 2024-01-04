@@ -3,15 +3,17 @@
   margin: 5rem auto;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .update-label {
   color: #fff;
+  text-transform: uppercase;
 }
 .update-input {
   width: 50%;
   padding: 8px;
   display: flex;
-  margin: 0 auto;
+  margin: 2px auto;
 }
 .update-submit-btn {
   background-color: #4caf50;

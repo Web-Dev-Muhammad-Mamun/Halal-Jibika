@@ -1,68 +1,87 @@
 /* Footer.css */
 
 .footer {
-    display: flex;
-    flex-wrap: wrap; /* Allow columns to wrap to the next line */
-    justify-content: space-around;
-    background: linear-gradient(to right, #1a1a1a, #333);
-    color: #fff;
-    padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+}
+
+.column {
+  flex: 1;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.column:hover {
+  transform: scale(1.05);
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+.column h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.column p {
+  margin-bottom: 5px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 5px;
+}
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00bcd4; /* Change the color to your desired hover color */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
   }
-  
+
   .column {
-    flex: 1;
-    margin-right: 20px;
-    margin-bottom: 20px; /* Add some space between columns on smaller screens */
+    margin-right: 0;
+    margin-bottom: 20px;
   }
-  
-  .column h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .column p {
-    font-size: 14px;
-    margin-bottom: 8px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .socialLinks {
-    display: flex;
-    flex-wrap: wrap; /* Allow social icons to wrap to the next line */
-  }
-  
-  .socialIcon,
-  .column a {
-    color: #fff;
-    font-size: 24px;
-    margin-right: 10px;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-  }
-  
-  .socialIcon:hover,
-  .column a:hover {
-    color: #61dafb;
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  /* Media Queries for Responsive Design */
-  
-  /* For tablets and larger screens */
-  @media only screen and (min-width: 768px) {
-    .column {
-      flex-basis: calc(33.33% - 20px); /* Adjust based on your preferred column width */
-    }
-  }
-  
-  /* For smaller screens (e.g., mobile phones) */
-  @media only screen and (max-width: 767px) {
-    .column {
-      flex-basis: 100%; /* Full width for small screens */
-    }
-  
-    .socialIcon,
-    .column a {
-      margin-bottom: 10px; /* Add space between social icons and columns on small screens */
-    }
-  }
-  
+}
+
+.column {
+  animation: fadeInUp 0.5s ease-out;
+}

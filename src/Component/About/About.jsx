@@ -3,7 +3,7 @@ import "./About.css";
 
 const AboutPage = () => {
   return (
-    <div className='about-container'>
+    <div className='about-container'  data-aos="zoom-in-up">
       <img src='https://shomoyeralo.com/2023/07/17/salo_1689533992.jpg' alt='Halal Jibika' className='about-image' />
       <div className='about-content'>
         <h2>About Halal Jibika</h2>
