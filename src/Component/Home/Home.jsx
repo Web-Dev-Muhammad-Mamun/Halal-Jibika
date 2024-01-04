@@ -1,6 +1,7 @@
 import Jobs from "../Blog/Jobs";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import hero from '../../assets/heroimagepng.png'
 const Home = () => {
   return (
     <div className='container'>
@@ -21,7 +22,7 @@ const Home = () => {
         </div>
 
         <div className='hero-image'>
-          <img src='/src/assets/heroimagepng.png' alt='' />
+          <img src={hero} alt='' />
         </div>
       </div>
       <fieldset className='latest-job'>
