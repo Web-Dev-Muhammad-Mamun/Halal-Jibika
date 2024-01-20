@@ -21,7 +21,7 @@ const Routes = createBrowserRouter([
     element: <App />,
     id: "root",
     loader: () => {
-      return axios.get("http://localhost:9000/jobs/");
+      return axios.get("https://api-server-6ak4.onrender.com/jobs/");
     },
     children: [
       {
@@ -49,7 +49,7 @@ const Routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:9000/jobs/${params.id}`);
+          return fetch(`https://api-server-6ak4.onrender.com/jobs/${params.id}`);
         },
       },
       {

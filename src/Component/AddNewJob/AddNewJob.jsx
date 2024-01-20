@@ -21,7 +21,7 @@ const AddNewJob = () => {
     e.preventDefault(); // Prevents the default form submission behavior
 
     try {
-      const response = await axios.post("http://localhost:9000/jobs", formData);
+      const response = await axios.post("https://api-server-6ak4.onrender.com/jobs", formData);
 
       // Handle the response as needed
       console.log("Response:", response.data);

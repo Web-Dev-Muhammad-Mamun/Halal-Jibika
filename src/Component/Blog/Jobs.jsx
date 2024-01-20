@@ -8,18 +8,18 @@ import useFetch from "./../CustomHook/CustomHook";
 import { Link } from "react-router-dom";
 
 const Jobs = () => {
-  const { data } = useFetch("http://localhost:9000/jobs");
+  const { data } = useFetch("https://api-server-6ak4.onrender.com/jobs");
   const [faveState, setFaveState] = useState(data);
 
   const { setAllJobs, theallJobs } = useContext(global);
 
   const handleDelete = async (id) => {
-    axios.delete(`http://localhost:9000/jobs/${id}`);
+    axios.delete(`https://api-server-6ak4.onrender.com/jobs/${id}`);
   };
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:9000/jobs");
+        const response = await axios.get("https://api-server-6ak4.onrender.com/jobs");
         setAllJobs(response.data);
       } catch (error) {
         Swal.fire({

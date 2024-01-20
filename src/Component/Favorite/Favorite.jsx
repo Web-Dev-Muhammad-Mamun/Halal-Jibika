@@ -3,7 +3,7 @@ import useFetch from "../CustomHook/CustomHook";
 import SingleFavoriteJob from "./../SingleFavorite/SingleFavoriteJob";
 import "./Favorite.css";
 const Favorite = () => {
-  const { loading, error, data } = useFetch("http://localhost:9000/jobs");
+  const { loading, error, data } = useFetch("https://api-server-6ak4.onrender.com/jobs");
   const [faveState, setFaveState] = useState(data);
 
   const favorites = faveState.filter(

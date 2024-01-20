@@ -16,7 +16,7 @@ const JobDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:9000/jobs");
+        const response = await axios.get("https://api-server-6ak4.onrender.com/jobs");
         setAllJobs(response.data);
       } catch (error) {
         Swal.fire({

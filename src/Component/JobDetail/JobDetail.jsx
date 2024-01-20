@@ -19,12 +19,12 @@ const JobDetail = ({
   const [clicked, setClicked] = useState(false);
   //
 
-  const { data } = useFetch("http://localhost:9000/jobs");
+  const { data } = useFetch("https://api-server-6ak4.onrender.com/jobs");
   const [applyState, setapplyState] = useState(data);
   const handleClickApply = (alljob) => {
     const status = alljob.isApplyed === "undefined" ? true : !alljob.isApplyed;
     axios
-      .put(`http://localhost:9000/jobs/${alljob.id}`, {
+      .put(`https://api-server-6ak4.onrender.com/jobs/${alljob.id}`, {
         ...alljob,
         isApplyed: status,
       })

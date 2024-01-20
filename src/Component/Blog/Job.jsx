@@ -11,7 +11,7 @@ const Job = ({ handleDelete, job, setFaveState, faveState }) => {
     console.log(job);
     const status = job.isTrue === "undefined" ? true : !job.isTrue;
     axios
-      .put(`http://localhost:9000/jobs/${job.id}`, {
+      .put(`https://api-server-6ak4.onrender.com/jobs/${job.id}`, {
         ...job,
         isTrue: status,
       })
