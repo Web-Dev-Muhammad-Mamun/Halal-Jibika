@@ -3,16 +3,25 @@ import useFetch from "../CustomHook/CustomHook";
 import SingleApplied from "../SingleApplied/SingleApplied";
 // import './Favorite.css'
 const AppliedJob = () => {
-  const { loading, error, data } = useFetch("https://api-server-6ak4.onrender.com/jobs");
+  const { loading, error, data } = useFetch(
+    "https://api-server-6ak4.onrender.com/jobs"
+  );
   const [applyState, setApply] = useState(data);
 
   const Applies = applyState.filter(
     (singleApply) => singleApply.isApplyed === true
   );
-
   useEffect(() => {
     setApply(data);
   }, [data]);
+
+  if (loading) {
+    return <p>Loading...</p>; // Show a loading message
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>; // Handle the error
+  }
   return (
     <div className='favorite-card'>
       {Applies.map((applied) => {
