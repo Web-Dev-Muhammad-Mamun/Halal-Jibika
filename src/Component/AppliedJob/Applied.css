@@ -1,12 +1,12 @@
-.no-favorite-jobs {
+.no-applied-jobs {
   display: block;
   text-align: center;
   padding-top: 7rem;
 }
-.no-favorite-jobs img {
+.no-applied-jobs img {
     border-radius: 10px;
 }
-.add-to-favorite button  {
+.add-to-applied button {
   color: #fff;
   background: #f0555b;
   border: 2px solid #f0555b;
@@ -15,9 +15,9 @@
   color: #fff;
   margin-top: 1rem;
   justify-content: center;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   cursor: pointer;
 }
-.add-to-favorite button:hover {
-    background: #111312;
+.add-to-applied button:hover {
+  background: #111312;
 }

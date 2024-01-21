@@ -49,7 +49,9 @@ const Routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) => {
-          return fetch(`https://api-server-6ak4.onrender.com/jobs/${params.id}`);
+          return fetch(
+            `https://api-server-6ak4.onrender.com/jobs/${params.id}`
+          );
         },
       },
       {
