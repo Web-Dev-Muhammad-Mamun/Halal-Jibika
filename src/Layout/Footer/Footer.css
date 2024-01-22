@@ -1,0 +1,84 @@
+/* Footer.css */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+  margin-top: 5rem;
+}
+
+.column {
+  flex: 1;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+.column h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.column p {
+  margin-bottom: 5px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 5px;
+}
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00bcd4; /* Change the color to your desired hover color */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .column {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.column {
+  animation: fadeInUp 0.5s ease-out;
+}

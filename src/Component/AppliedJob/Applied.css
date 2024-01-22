@@ -1,0 +1,23 @@
+.no-applied-jobs {
+  display: block;
+  text-align: center;
+  padding-top: 7rem;
+}
+.no-applied-jobs img {
+    border-radius: 10px;
+}
+.add-to-applied button {
+  color: #fff;
+  background: #f0555b;
+  border: 2px solid #f0555b;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  margin-top: 1rem;
+  justify-content: center;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+.add-to-applied button:hover {
+  background: #111312;
+}

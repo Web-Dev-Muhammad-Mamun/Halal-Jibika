@@ -1,0 +1,139 @@
+/* logo */
+.logo {
+  transition: 0.5s all ease;
+  width: 290px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+body {
+  background-image: url("/src/assets/wlc-bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav-bar-container {
+  display: flex;
+  background: #0b0d0c;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  z-index: 100;
+  width: 100%;
+
+}
+
+.navigation-bar-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  width: 100px;
+  margin-right: 8px;
+}
+
+.user-info span {
+  color: #f0555b;
+  font-size: 16px;
+}
+
+.user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0 20px;
+}
+
+.navigation-name {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navBar ul li a {
+  color: white;
+  transition: 0.4s all;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s all ease;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+}
+.navBar ul li a:focus {
+  color: #f0555b;
+}
+.navBar ul li a:hover {
+  color: #f0555b;
+  font-size: 15px;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.toggle-btn {
+  display: none;
+}
+.navBar ul li .sign-btn {
+  border: 2px solid #f0555b;
+  padding: 8px;
+  border-radius: 5px;
+}
+.navBar ul li .sign-btn:hover {
+  color: #fff;
+  border: 2px solid #fff;
+  background: #f0555b;
+}
+.right-side-sec {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .navigation-bar-section {
+    width: 100%;
+  }
+  .navBar {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 60px;
+    left: 300px;
+    z-index: 100;
+  }
+  .navigation-name {
+    display: flex;
+    flex-direction: column;
+  }
+  .toggle-btn {
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    margin-right: 20px;
+  }
+
+  .navBar.open {
+    display: block;
+    background: #0b0d0c;
+    top: 60px;
+    left: 0;
+    width: 80%;
+  }
+  .navBar.open ul li a {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+}

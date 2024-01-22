@@ -1,0 +1,23 @@
+.no-favorite-jobs {
+  display: block;
+  text-align: center;
+  padding-top: 7rem;
+}
+.no-favorite-jobs img {
+    border-radius: 10px;
+}
+.add-to-favorite button  {
+  color: #fff;
+  background: #f0555b;
+  border: 2px solid #f0555b;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  margin-top: 1rem;
+  justify-content: center;
+  transition: .3s all ease;
+  cursor: pointer;
+}
+.add-to-favorite button:hover {
+    background: #111312;
+}

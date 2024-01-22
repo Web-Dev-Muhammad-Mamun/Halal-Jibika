@@ -1,0 +1,84 @@
+
+[
+    {
+      "id": 1,
+      "image": "/src/assets/google png.png",
+      "title": "Software Engineer",
+      "company": "Google",
+      "position": "Senior",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 2,
+      "image": "/src/assets/meta png.png",
+      "title": "Web Developer",
+      "company": "Meta",
+      "position": "Junior",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et."
+    },
+    {
+      "id": 3,
+      "image": "/src/assets/twitter.png",
+      "title": "Data Scientist",
+      "company": "Twitter",
+      "position": "Internship",
+      "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "id": 4,
+      "image" : "/src/assets/telegram png.png",
+      "title": "UX Designer",
+      "company": "Telegram",
+      "position": "Senior",
+      "description": "Nulla facilisi. Sed auctor lacus in massa convallis hendrerit."
+    },
+    {
+      "id": 5,
+      "image": "/src/assets/insta png.png",
+      "title": "Network Administrator",
+      "company": "Instagram",
+      "position": "Junior",
+      "description": "Curabitur euismod felis vitae elit ullamcorper, nec scelerisque ligula."
+    },
+    {
+      "id": 6,
+      "image": "/src/assets/thread png.png",
+      "title": "Marketing Specialist",
+      "company": "Thread",
+      "position": "Internship",
+      "description": "Vivamus auctor, risus nec congue gravida, ligula elit ultricies nisi."
+    },
+    {
+      "id": 7,
+      "image":"/src/assets/discord.png",
+      "title": "Hardware Engineer",
+      "company": "Discord",
+      "position": "Senior",
+      "description": "Phasellus id justo sit amet nulla efficitur venenatis vel ac leo."
+    },
+    {
+      "id": 8,
+      "image": "/src/assets/github.png",
+      "title": "Mobile App Developer",
+      "company": "Github",
+      "position": "Senior",
+      "description": "Integer eu justo eu orci cursus dictum non a turpis."
+    },
+    {
+      "id": 9,
+      "image" : "/src/assets/true caller.png",
+      "title": "Finance Intern",
+      "company": "True Caller",
+      "position": "Internship",
+      "description": "Fusce vel libero eu justo malesuada volutpat vel ac elit."
+    },
+    {
+      "id": 10,
+      "image": "/src/assets/apple.png",
+      "title": "Cybersecurity Analyst",
+      "company": "Apple",
+      "position": "Senior",
+      "description": "Quisque vel quam nec elit luctus bibendum sit amet ut turpis."
+    }
+  ]
+

@@ -1,0 +1,27 @@
+.jobsContainer {
+  margin: -4rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.add-job-link {
+  margin: 7rem auto;
+  display: flex;
+  justify-content: center;
+}
+.add-job-link li a {
+  background: #f0555b;
+  border: 2px solid #f0555b;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  width: 20rem;
+  justify-content: center;
+  transition: 0.1s all ease;
+}
+.add-job-link li a:hover {
+  background: #111312;
+}
