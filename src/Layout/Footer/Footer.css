@@ -15,6 +15,13 @@
   transition: transform 0.3s ease;
 }
 
+<<<<<<< HEAD
+=======
+.column:hover {
+  transform: scale(1.05);
+}
+
+>>>>>>> 50a211e0ababa2c65b2955d9cfee59e59f4be008
 .column:last-child {
   margin-right: 0;
 }

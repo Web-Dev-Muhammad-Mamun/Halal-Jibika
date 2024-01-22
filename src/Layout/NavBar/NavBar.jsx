@@ -4,7 +4,11 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.init";
 import "./NavBar.css";
 import logo from "../../assets/mainLogo.png";
+<<<<<<< HEAD
 import user from "../../assets/user.png";
+=======
+import user from '../../assets/user.png'
+>>>>>>> 50a211e0ababa2c65b2955d9cfee59e59f4be008
 // /src/assets/512x512bb-removebg-preview.png
 const NavBar = () => {
   const navigate = useNavigate();
@@ -17,6 +21,10 @@ const NavBar = () => {
   const logOut = () => {
     signOut(auth).then((res) => {
       navigate("/");
+<<<<<<< HEAD
+=======
+      console.log(res);
+>>>>>>> 50a211e0ababa2c65b2955d9cfee59e59f4be008
     });
   };
 
@@ -124,7 +132,14 @@ const NavBar = () => {
                   {auth.currentUser?.photoURL ? (
                     <img src={auth.currentUser?.photoURL} alt='profilePic' />
                   ) : (
+<<<<<<< HEAD
                     <img src={user} alt='' />
+=======
+                    <img
+                      src={user}
+                      alt=''
+                    />
+>>>>>>> 50a211e0ababa2c65b2955d9cfee59e59f4be008
                   )}
                 </div>
               </div>
