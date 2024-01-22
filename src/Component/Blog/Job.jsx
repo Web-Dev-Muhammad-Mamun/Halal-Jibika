@@ -32,43 +32,7 @@ const Job = ({ handleDelete, job, setFaveState, faveState }) => {
 
   return (
     <div>
-<<<<<<< HEAD
-      <div className='card'>
-        <div className='image-company'>
-          <img src={logo} alt='' />
-          <p>{companyName}</p>
-        </div>
-        <h2>{title}</h2>
-        <h3>
-          <GiPositionMarker color='#f0555b' />
-          {position}
-        </h3>
-        <p>{description}</p>
-
-        <div className='button-container'>
-          <button
-            onClick={() => {
-              handleClickFavorite(job);
-            }}
-            className='favorite-button'>
-            <FaHeart
-              className={`icons favorite-icon ${job.isTrue ? " heart" : null}`}
-            />
-          </button>
-
-          <button className='edit-button'>
-            <Link to={`/jobsDetails/${id}`}>
-              <FaEdit className='icons edit-icon' />
-            </Link>
-          </button>
-          <button className='delete-button' onClick={() => handleDelete(id)}>
-            <FaTrash className='icons delete-icon' />
-          </button>
-          <button className='see_details'>
-            <Link to={`/jobdetails/${id}`}> See Details</Link>
-          </button>
-=======
-      <div data-aos='fade-up-right'>
+      <div >
         <div className='card'>
           <div className='image-company'>
             <img src={logo} alt='' />
@@ -106,7 +70,6 @@ const Job = ({ handleDelete, job, setFaveState, faveState }) => {
               <Link to={`/jobdetails/${id}`}> See Details</Link>
             </button>
           </div>
->>>>>>> 50a211e0ababa2c65b2955d9cfee59e59f4be008
         </div>
       </div>
     </div>
