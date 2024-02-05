@@ -13,7 +13,7 @@ const Home = () => {
             <span>Million </span>of Jobs is<br></br>Waiting for you
           </h1>
           <h4>
-            30,000 people trust us and they find the work of their <br></br>{" "}
+            30,0000 people trust us and they find the work of their <br></br>{" "}
             choice on our platform and they are very happy with us.
           </h4>
           <button className='explore-btn'>
